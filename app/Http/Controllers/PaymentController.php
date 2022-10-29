@@ -25,10 +25,6 @@ class PaymentController extends Controller
     public function getData( )
     {
         $data = payment::get();
-        // return DataTables($data)->addIndexColumn()->make(true);
-        // $payments = DataTable::of($data)->addIndexColumn()->make(true);
-        // return \response()->json($data);
-        // return $data;
         return Datatables::of($data)->addIndexColumn()->make();
     }
 
